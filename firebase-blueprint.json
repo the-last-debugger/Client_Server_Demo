@@ -1,0 +1,50 @@
+{
+  "entities": {
+    "Student": {
+      "title": "Student",
+      "description": "Student registration record for the Activity 3 Client-Server Application",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the student record",
+          "maxLength": 128
+        },
+        "studentName": {
+          "type": "string",
+          "description": "Full name of the student",
+          "minLength": 2,
+          "maxLength": 100
+        },
+        "course": {
+          "type": "string",
+          "description": "Enrolled course or major",
+          "minLength": 2,
+          "maxLength": 100
+        },
+        "studentId": {
+          "type": "string",
+          "description": "Institutional Student ID code",
+          "maxLength": 50
+        },
+        "email": {
+          "type": "string",
+          "description": "Student email address",
+          "maxLength": 120
+        },
+        "registrationTimestamp": {
+          "type": "string",
+          "description": "ISO 8601 string of when registration occurred",
+          "maxLength": 64
+        }
+      },
+      "required": ["id", "studentName", "course", "registrationTimestamp"]
+    }
+  },
+  "firestore": {
+    "/students/{studentDocId}": {
+      "schema": "Student",
+      "description": "Collection of student registration records"
+    }
+  }
+}

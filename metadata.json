@@ -1,0 +1,6 @@
+{
+  "name": "Student Registration System - Activity 3 Client-Server Application",
+  "description": "Full-stack client-server student registration system demonstrating 3-tier architecture, HTTP API communication, and persistent database storage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

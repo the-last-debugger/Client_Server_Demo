@@ -1,0 +1,34 @@
+[
+  {
+    "id": "STU_1791831231109_kp50w8",
+    "studentName": "Jordan Miller",
+    "course": "B.Sc. Computer Science",
+    "studentId": "CS-2024-1001",
+    "email": "jordan.miller@campus.edu",
+    "registrationTimestamp": "2026-10-12T18:53:51.109Z"
+  },
+  {
+    "id": "STU_1791831254076_3n8ap8",
+    "studentName": "Alex Rivera",
+    "course": "B.Sc. Computer Science",
+    "studentId": "CS-2024-0101",
+    "email": "alex.rivera@college.edu",
+    "registrationTimestamp": "2026-10-12T18:54:14.076Z"
+  },
+  {
+    "id": "STU_1791831254224_jmcrqr",
+    "studentName": "Samantha Chen",
+    "course": "B.Eng. Software Engineering",
+    "studentId": "SE-2024-0205",
+    "email": "s.chen@college.edu",
+    "registrationTimestamp": "2026-10-12T18:54:14.224Z"
+  },
+  {
+    "id": "STU_1791831254354_qdqpwb",
+    "studentName": "Marcus Johnson",
+    "course": "B.Sc. Information Technology",
+    "studentId": "IT-2024-0312",
+    "email": "marcus.j@college.edu",
+    "registrationTimestamp": "2026-10-12T18:54:14.354Z"
+  }
+]

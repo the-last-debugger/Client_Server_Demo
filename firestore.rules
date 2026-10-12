@@ -1,0 +1,32 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isValidStudent(data) {
+      return data.keys().hasAll(['id', 'studentName', 'course', 'registrationTimestamp'])
+        && data.keys().hasOnly(['id', 'studentName', 'course', 'registrationTimestamp', 'studentId', 'email'])
+        && data.id is string && data.id.size() >= 1 && data.id.size() <= 128
+        && data.studentName is string && data.studentName.size() >= 2 && data.studentName.size() <= 100
+        && data.course is string && data.course.size() >= 2 && data.course.size() <= 100
+        && data.registrationTimestamp is string && data.registrationTimestamp.size() <= 64
+        && (!('studentId' in data) || (data.studentId is string && data.studentId.size() <= 50))
+        && (!('email' in data) || (data.email is string && data.email.size() <= 120));
+    }
+
+    match /students/{studentDocId} {
+      allow get, list: if true;
+      allow create: if isValidId(studentDocId) && isValidStudent(request.resource.data);
+      allow update: if isValidId(studentDocId) && isValidStudent(request.resource.data);
+      allow delete: if isValidId(studentDocId);
+    }
+
+    // Default deny for all other collections
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
